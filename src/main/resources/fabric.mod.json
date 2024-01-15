@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "pixelhud",
+  "version": "${version}",
+  "name": "Pixel-HUD",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/cenes/Pixel-HUD"
+  },
+  "license": "MIT",
+  "icon": "assets/Pixel-HUD/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "org.pixelhud.client.Pixel_HUDClient"
+    ],
+    "main": [
+      "org.pixelhud.Pixel_HUD"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.22",
+    "fabric": "*",
+    "minecraft": "1.18"
+  }
+}
