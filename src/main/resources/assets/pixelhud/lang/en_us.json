@@ -1,6 +1,6 @@
 {
   "config.PixelHud.title": "Pixel-Hud Configuration",
   "config.PixelHud.coordinate": "coordinate",
-  "config.PixelHud.coordinate.x": "X offset",
-  "config.PixelHud.coordinate.y": "Y offset"
+  "config.PixelHud.coordinate.x": "Coords X Percent",
+  "config.PixelHud.coordinate.y": "Coords Y Percent"
 }
