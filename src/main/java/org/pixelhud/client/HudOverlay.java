@@ -2,7 +2,6 @@ package org.pixelhud.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
-import net.fabricmc.fabric.mixin.networking.accessor.MinecraftClientAccessor;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawableHelper;
@@ -16,9 +15,11 @@ import net.minecraft.item.Items;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.math.BlockPos;
 
+import static org.pixelhud.client.Config.HudConfigScreen.playerCoordXPercentage;
+
 public class HudOverlay implements HudRenderCallback {
 
-    int x_coo = 10;
+    int x_coo = playerCoordXPercentage;
     int y_coo = 10;
 
     int x_armor = 10;
@@ -47,9 +48,14 @@ public class HudOverlay implements HudRenderCallback {
 
             int widthBackgroundsCoordinates = calculateBackgroundWidth(xCoordinate, yCoordinate, zCoordinate);
 
-            renderBackground(matrixStack, x_coo - 5, y_coo - 5, 9 + widthBackgroundsCoordinates, 37); // Transparent black background
+            renderBackground(matrixStack, (MinecraftClient.getInstance().getWindow().getFramebufferWidth()/100) * playerCoordXPercentage - 5, y_coo - 5, 9 + widthBackgroundsCoordinates, 37); // Transparent black background
             renderTextCoordinate(matrixStack, x_coo, y_coo, xCoordinate, yCoordinate, zCoordinate, 1.0f);
-    
+            System.out.println("Scalde" + ((MinecraftClient.getInstance().getWindow().getScaledHeight()/100) * playerCoordXPercentage - 5));
+            System.out.println("NotScalde" + ((MinecraftClient.getInstance().getWindow().getFramebufferWidth()/100) * playerCoordXPercentage - 5));
+            System.out.println();
+            System.out.println();
+            System.out.println();
+            System.out.println();
             // Take the item of each slot
             ItemStack mainHand = client.player.getEquippedStack(EquipmentSlot.MAINHAND);
             ItemStack head = client.player.getEquippedStack(EquipmentSlot.HEAD);
