@@ -6,12 +6,13 @@
   "description": "Pixel-Hud is here to have a simple and customizable Hud",
   "authors": ["Oiha"],
   "contact": {
-    "repo": "https://github.com/cenes/Pixel-HUD"
+    "repo": "https://github.com/Oiha-dev/Pixel-HUD"
   },
   "license": "MIT",
-  "icon": "assets/Pixel-HUD/icon.png",
+  "icon": "assets/pixelhud/icon.png",
   "environment": "client",
   "entrypoints": {
+    "modmenu": [ "org.pixelhud.ModMenuApiIntegration" ],
     "client": [
       "org.pixelhud.client.Pixel_HUDClient"
     ],
