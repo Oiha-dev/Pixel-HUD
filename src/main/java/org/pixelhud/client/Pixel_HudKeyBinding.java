@@ -9,14 +9,14 @@ import org.lwjgl.glfw.GLFW;
 
 @Environment(EnvType.CLIENT)
 public class Pixel_HudKeyBinding {
-    private static final String CATEGORY = "MineMath";
+    private static final String CATEGORY = "Pixel-Hud";
     private static KeyBinding calculatorKeyBinding;
 
     public static void register() {
         calculatorKeyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "key.calculator",
+                "key.hud",
                 InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_N, // Default key (N)
+                GLFW.GLFW_KEY_UNKNOWN,
                 CATEGORY
         ));
     }
